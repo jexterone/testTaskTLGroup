@@ -13,7 +13,6 @@
          class="accordion-collapse collapse" 
          aria-labelledby="heading-{{ department.id }}">
         <div class="accordion-body">
-            <!-- Дочерние подразделения -->
             {% if department.children.exists %}
                 <div class="accordion" id="nestedAccordion-{{ department.id }}">
                     {% for child in department.children.all %}
@@ -21,8 +20,7 @@
                     {% endfor %}
                 </div>
             {% endif %}
-
-            <!-- Сотрудники в подразделении -->
+        
             {% if department.employees.exists %}
                 <ul class="list-group">
                     {% for employee in department.employees.all %}
